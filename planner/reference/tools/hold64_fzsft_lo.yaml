@@ -1,0 +1,182 @@
+apiVersion: jobset.x-k8s.io/v1alpha2
+kind: JobSet
+metadata:
+  name: ${arnold_job_name}
+  labels:
+    kueue.x-k8s.io/queue-name: ${arnold_application_id}-default-queue
+    kueue.x-k8s.io/priority-class: high-priority
+    app.canva.k8s/application-id: ${arnold_application_id}
+    app.canva.k8s/component-type: ml-trainer
+    app.canva.k8s/flavor: prod
+    app.kubernetes.io/name: ml-trainer
+    workload.canva.internal/purpose: rtx-pro-6000-64gpu-high-priority-hold
+  annotations:
+    editcap.canva.com/purpose: editparser 9B r12 (wandb 55930c837a64) c19000/c20000 PE inference on RTX PRO 6000
+    editcap.canva.com/hold-policy: User-authorized hold; inference completion does not release GPUs.
+    workload.arnold.canva.k8s/starting-timeout: 24h
+    workload.arnold.canva.k8s/recovering-timeout: 24h
+spec:
+  ttlSecondsAfterFinished: 86400
+  successPolicy:
+    operator: All
+    targetReplicatedJobs: [workers]
+  failurePolicy:
+    maxRestarts: 0
+  replicatedJobs:
+    - name: workers
+      replicas: 8
+      template:
+        spec:
+          completionMode: Indexed
+          completions: 1
+          parallelism: 1
+          backoffLimit: 10
+          podFailurePolicy:
+            rules:
+              - action: Ignore
+                onPodConditions:
+                  - type: DisruptionTarget
+                    status: "True"
+          template:
+            metadata:
+              annotations:
+                exec.arnold.canva.k8s/default-container: hold
+                karpenter.sh/do-not-disrupt: "true"
+              labels:
+                app.canva.k8s/application-id: ${arnold_application_id}
+                app.canva.k8s/component-type: ml-trainer
+                app.canva.k8s/flavor: prod
+                app.kubernetes.io/name: ml-trainer
+                kueue.x-k8s.io/priority-class: high-priority
+                kueue.x-k8s.io/podset: workers
+                workload.canva.internal/purpose: rtx-pro-6000-64gpu-high-priority-hold
+            spec:
+              runtimeClassName: nvidia
+              serviceAccountName: ${arnold_application_id}-model-trainer
+              restartPolicy: Never
+              terminationGracePeriodSeconds: 60
+              affinity:
+                nodeAffinity:
+                  requiredDuringSchedulingIgnoredDuringExecution:
+                    nodeSelectorTerms:
+                      - matchExpressions:
+                          - key: karpenter.sh/capacity-type
+                            operator: In
+                            values: [reserved]
+                          - key: karpenter.k8s.aws/instance-gpu-name
+                            operator: In
+                            values: [rtx-pro-server-6000]
+                          - key: karpenter.k8s.aws/instance-gpu-count
+                            operator: In
+                            values: ["8"]
+                          - key: node.kubernetes.io/instance-type
+                            operator: In
+                            values: [g7e.48xlarge]
+                          - key: node.canva.k8s/dedicated
+                            operator: In
+                            values: [ai-efa-accelerated]
+                podAntiAffinity:
+                  requiredDuringSchedulingIgnoredDuringExecution:
+                    - topologyKey: kubernetes.io/hostname
+                      namespaceSelector: {}
+                      labelSelector:
+                        matchLabels:
+                          app.canva.k8s/component-type: ml-trainer
+              tolerations:
+                - key: dedicated
+                  operator: Equal
+                  value: ai-efa-accelerated
+                  effect: NoSchedule
+                - key: nvidia.com/gpu
+                  operator: Exists
+                  effect: NoSchedule
+              containers:
+                - name: hold
+                  # Same digest as the r7/r8/r3 training jobs (provides /opt/mcore-venv for export + training reference).
+                  image: 699983977898.dkr.ecr.us-east-1.amazonaws.com/ds-core-cn-omra-trainer@sha256:54d365f856e275bd4fb55d1002be98c9bb303b1dc74005b8a82584a75f0554d4
+                  imagePullPolicy: IfNotPresent
+                  command: [/bin/bash, -c]
+                  args:
+                    - |
+                      set -u
+                      mkdir -p /mnt/ephemeral/hold /mnt/ephemeral/keepalive
+                      nvidia-smi --query-gpu=index,uuid,name,memory.total,driver_version --format=csv,noheader > /mnt/ephemeral/hold/gpus.csv
+                      cat /mnt/ephemeral/hold/gpus.csv
+                      cat > /mnt/ephemeral/keepalive/gpu_keepalive.py <<'PY'
+                      import os, sys, time, torch
+                      DEVICE = int(sys.argv[1]); STOP = '/tmp/stop_gpu_keepalive'
+                      torch.cuda.set_device(DEVICE)
+                      a = torch.randn(8192, 8192, device='cuda', dtype=torch.bfloat16)
+                      b = torch.randn(8192, 8192, device='cuda', dtype=torch.bfloat16)
+                      torch.cuda.synchronize()
+                      def foreign():
+                          free, total = torch.cuda.mem_get_info()
+                          return (total - free) - torch.cuda.memory_reserved() - (600 << 20)
+                      paused = None
+                      while not os.path.exists(STOP):
+                          y = foreign() > (2 << 30)
+                          if y != paused:
+                              print(f'[keepalive gpu{DEVICE}] {"paused" if y else "running"} {time.strftime("%H:%M:%S")}', flush=True); paused = y
+                          if y:
+                              time.sleep(2); continue
+                          t = time.monotonic() + 0.8
+                          while time.monotonic() < t:
+                              for _ in range(8): torch.mm(a, b)
+                              torch.cuda.synchronize()
+                          time.sleep(0.2)
+                      PY
+                      for i in 0 1 2 3 4 5 6 7; do
+                        nohup /opt/mcore-venv/bin/python /mnt/ephemeral/keepalive/gpu_keepalive.py $i > /mnt/ephemeral/keepalive/gpu$i.log 2>&1 < /dev/null &
+                      done
+                      touch /tmp/rtx_hold_ready
+                      echo "[hold] $(hostname) ready, 8 RTX PRO 6000 visible, keepalive started $(date -u +%FT%TZ)"
+                      exec sleep infinity
+                  env:
+                    - name: CANVA_JOBSET_NAME
+                      value: ${arnold_job_name}
+                    - name: CANVA_CLUSTER_STORAGE_PATH
+                      value: /mnt/shared_storage/jobs/${arnold_job_name}
+                    - name: AWS_REGION
+                      value: us-east-1
+                    - name: AWS_DEFAULT_REGION
+                      value: us-east-1
+                    - name: POD_NAME
+                      valueFrom:
+                        fieldRef:
+                          fieldPath: metadata.name
+                    - name: NODE_NAME
+                      valueFrom:
+                        fieldRef:
+                          fieldPath: spec.nodeName
+                  readinessProbe:
+                    exec:
+                      command: [/bin/sh, -c, test -f /tmp/rtx_hold_ready]
+                    initialDelaySeconds: 5
+                    periodSeconds: 10
+                    timeoutSeconds: 10
+                    failureThreshold: 360
+                  resources:
+                    requests:
+                      cpu: "160"
+                      memory: 1200Gi
+                      nvidia.com/gpu: "8"
+                    limits:
+                      memory: 1800Gi
+                      nvidia.com/gpu: "8"
+                  volumeMounts:
+                    - name: shared-storage
+                      mountPath: /mnt/shared_storage
+                    - name: scratch
+                      mountPath: /mnt/ephemeral
+                    - name: shared-memory
+                      mountPath: /dev/shm
+              volumes:
+                - name: shared-storage
+                  persistentVolumeClaim:
+                    claimName: core-cn-ml-trainer-efs-anyscale
+                - name: scratch
+                  emptyDir: {}
+                - name: shared-memory
+                  emptyDir:
+                    medium: Memory
+                    sizeLimit: 256Gi

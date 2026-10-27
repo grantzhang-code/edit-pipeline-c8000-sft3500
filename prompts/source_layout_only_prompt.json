@@ -1,0 +1,4 @@
+{
+  "system": "You extract only layout hierarchy and geometry from an image. Return only valid JSON and no prose.",
+  "user": "<image>\nGenerate only compositional_deconstruction.elements. Every element must contain exactly label, parent, and bbox in xyxy_1000 coordinates [x1, y1, x2, y2], with integer values in [0, 1000]. The label identifies the element itself; parent is its immediate parent's label, or ROOT/null for a root element. Do not output any other fields or prose."
+}

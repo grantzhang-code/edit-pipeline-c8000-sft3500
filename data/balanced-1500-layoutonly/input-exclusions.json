@@ -1,0 +1,380 @@
+{
+ "9": {
+  "input_index": 9,
+  "case_id": "manual_upload:6b53cee1-e626-4e60-b415-0d6361a86a7c",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "15aaf783316e3f309e9ec232607dd2737310e4270efa0c6ef5c45a14f9bac6d4"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "303": {
+  "input_index": 303,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:SI-196",
+  "status": "awaiting_gpt_image_target",
+  "missing_source_images": [],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "426": {
+  "input_index": 426,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:MI-052",
+  "status": "awaiting_gpt_image_target",
+  "missing_source_images": [],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "576": {
+  "input_index": 576,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:MI-239",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "8de22f4ce50c0cbb5252cda48a04ec756375f237362e4a3bd820c0359d2009a6"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "670": {
+  "input_index": 670,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:MI-495",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "e2c2108415a03e3dafd98fb58d63ed8517162463b1e8e9de902f8a1d42b14c8e"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "684": {
+  "input_index": 684,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:MI-446",
+  "status": "awaiting_gpt_image_target",
+  "missing_source_images": [],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "708": {
+  "input_index": 708,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:ROUND-011",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "364c443ec9a11283420876a6308f1e21df7fc47cdaabfa14bd08e9b9c6707162"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "875": {
+  "input_index": 875,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:MI-290",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "765a9a2b993d7a5a1a5fbb40831f9163a4ad98fd4206eee90f2389f9d3c50eb5"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "880": {
+  "input_index": 880,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:MI-295",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "c552b2dc5220f0c7f95c397d0cd26dca8ea3c4ab4a33f0b653b41c34f9bf9e36"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "882": {
+  "input_index": 882,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:MI-297",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "70b03d92749d4c524c3c9a6d3fd89c002e3b928903f30f56d34dd0dc0039e623"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "915": {
+  "input_index": 915,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:MI-330",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "db9889678e2f0c6e7d193e86fa2ba252dd80da64c3072c26f011c07f270182a3"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "932": {
+  "input_index": 932,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:MI-347",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "cd32eb75f4519d2e6427dae3b984fcce7dc2428b660715e064a05abfd37c65df"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "935": {
+  "input_index": 935,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:MI-350",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "d063ccd22b35e0428bc5c88071fa71105217d279a05bf791ed9dcc1eb4f35cc2"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "962": {
+  "input_index": 962,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:MI-390",
+  "status": "awaiting_gpt_image_target",
+  "missing_source_images": [],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "985": {
+  "input_index": 985,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:core-CN-311-0fc866004914b8b4",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "b7bce17c19fce1afff76c09e5c2e9fa382948afddfaada05d209baf59ceef57f"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1001": {
+  "input_index": 1001,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:core-CN-311-1a6b8c44362d7956",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "aa66a896b5e90f4eb31efef833c4d46be1e39ce485083e5549503e850ee213a4"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1031": {
+  "input_index": 1031,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:core-CN-311-460ea76336d51e33",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "b7bce17c19fce1afff76c09e5c2e9fa382948afddfaada05d209baf59ceef57f"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1160": {
+  "input_index": 1160,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:core-CN-311-e317e4d6c3e0e1d7",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "aa66a896b5e90f4eb31efef833c4d46be1e39ce485083e5549503e850ee213a4"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1181": {
+  "input_index": 1181,
+  "case_id": "grant_editing_synthetic:poster_007",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "fd37eeb0201f4a671ed3bec487d8c3a5a843d9b8fd80f56ff570873d6930f75f"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1236": {
+  "input_index": 1236,
+  "case_id": "mib_open_benchmark_v1:open-imagenworld-mrie_t_000007",
+  "status": "awaiting_gpt_image_target",
+  "missing_source_images": [],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1239": {
+  "input_index": 1239,
+  "case_id": "mib_open_benchmark_v1:open-miebench-background_transfer-0081",
+  "status": "awaiting_gpt_image_target",
+  "missing_source_images": [],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1247": {
+  "input_index": 1247,
+  "case_id": "multireference_eval:multiref-728707fd3863f0052cd2b5c2",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "3633cd21f42c67d03e72c14a28480c0a88367c2bec90b98ef43a199c190866d4"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1328": {
+  "input_index": 1328,
+  "case_id": "multireference_eval:multiref-83f16bb54ef68ebd2db90626",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "0f9af85d506954cde875613decd8b5de775b6d1b018f080a581f8e9210451466"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1374": {
+  "input_index": 1374,
+  "case_id": "mib_open_benchmark_v1:open-imagenworld-mrie_t_000058",
+  "status": "awaiting_gpt_image_target",
+  "missing_source_images": [],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1420": {
+  "input_index": 1420,
+  "case_id": "mib_open_benchmark_v1:open-miebench-background_transfer-0153",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "5b0fa570d83fb7464d5d20e37b95bf5dd067548aa657a03c5e2b9b194e92df44"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1446": {
+  "input_index": 1446,
+  "case_id": "mib_open_benchmark_v1:open-imagenworld-mrig-train-499-id-mrig_s_000100",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "ef135349fcad721b2a7bb21d087ae238f6e187b33926c59cd333899749ac11b2"
+  ],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1463": {
+  "input_index": 1463,
+  "case_id": "mib_open_benchmark_v1:open-dreamomni2-editing_benchmark-local_action-2",
+  "status": "awaiting_gpt_image_target",
+  "missing_source_images": [],
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "38": {
+  "input_index": 38,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:MI-492",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "1ac68863f4d985264062ba024b47b811016ed7118db4892f41687ba0ba70bbbd"
+  ],
+  "note": "no schema-valid layout_only (or full-JSON) Source regions",
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "43": {
+  "input_index": 43,
+  "case_id": "pixelcraftbench_v2:1f58f442-0762-48cd-a9bb-b094830d60fa",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "bad86091460d1056561b70d968cee382f48fe80a8e81bc47dfc2016247c07018"
+  ],
+  "note": "no schema-valid layout_only (or full-JSON) Source regions",
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "315": {
+  "input_index": 315,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:SI-594",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "040300822f9a40a1e3c2ec2502104f2df275be18b0bb49e64883a7d5f27b3c3e"
+  ],
+  "note": "no schema-valid layout_only (or full-JSON) Source regions",
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "546": {
+  "input_index": 546,
+  "case_id": "ugc_s3_20261009_v2:ugc:development:MI-200",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "dae1b514dda4955d9c2f51d8caabdfa0443234187c4d115261e3969c5364dad2"
+  ],
+  "note": "no schema-valid layout_only (or full-JSON) Source regions",
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1265": {
+  "input_index": 1265,
+  "case_id": "mib_open_benchmark_v1:open-imagenworld-mrie_i_000063",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "46efa6abedfcace5543df8684962db668dca3bf9d2f4a95066813a0b67546688",
+   "2942b8d9253918cb9a9949270ae238184ec7bc98f37a7453817e19a9c4fbe5f4"
+  ],
+  "note": "no schema-valid layout_only (or full-JSON) Source regions",
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1304": {
+  "input_index": 1304,
+  "case_id": "mib_open_benchmark_v1:open-imagenworld-mrie_p_000054",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "23b719669643e689fa54c2b3da4f1f3967c68762091ec90fb436fa965acce55f"
+  ],
+  "note": "no schema-valid layout_only (or full-JSON) Source regions",
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1426": {
+  "input_index": 1426,
+  "case_id": "mib_open_benchmark_v1:open-cpi-general-01026-1027",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "908082bdeecf94a34b1b6d90be5ae0aedd86f560b7f8f2fe9eaf142fcec1d14f"
+  ],
+  "note": "no schema-valid layout_only (or full-JSON) Source regions",
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ },
+ "1429": {
+  "input_index": 1429,
+  "case_id": "mib_open_benchmark_v1:open-cpi-general-01319-1320",
+  "status": "failed_source_annotation",
+  "missing_source_images": [
+   "f8b3417afd1d814d0b1b8e57f40ee5c72bed95deecfb11bb65060ee705224b3c"
+  ],
+  "note": "no schema-valid layout_only (or full-JSON) Source regions",
+  "inference_attempts": 0,
+  "json_valid": null,
+  "schema_valid": null
+ }
+}

@@ -1,0 +1,322 @@
+{
+ "input_index": 0,
+ "case_id": "manual_upload:0a3db47c-5e04-4233-abb6-c0491c4d0019",
+ "input_count": 1,
+ "instruction": "Choose one photo in [image 1] and crop it closer so its subject stands out more, keeping the crop within the existing panel. Leave the rest of the poster unchanged.",
+ "instruction_variant": "luna-20261013",
+ "original_user_instruction": "Can you give one of the photos in this festival poster a closer crop so the subject stands out more? I'll leave the photo choice and framing to you. Keep it within its existing panel and leave the rest of the poster unchanged.",
+ "source_images": [
+  {
+   "uri": "s3://core-cn-oss.canva.com/usr/tayo/testset-studio/shared/v1/objects/images/f989603af4b3f4bf402590a04f5576d9a2c080a1ef716e97ab7ce52ca421edd4.png",
+   "sha256": "f989603af4b3f4bf402590a04f5576d9a2c080a1ef716e97ab7ce52ca421edd4",
+   "width": 1696,
+   "height": 2432
+  }
+ ],
+ "source_regions": {
+  "frame_0": {
+   "compositional_deconstruction": {
+    "elements": [
+     {
+      "label": "<poster canvas 1>",
+      "parent": "ROOT",
+      "bbox": [
+       0,
+       0,
+       1000,
+       1000
+      ]
+     },
+     {
+      "label": "<dark panel 1>",
+      "parent": "ROOT",
+      "bbox": [
+       0,
+       460,
+       736,
+       1000
+      ]
+     },
+     {
+      "label": "<reaching hands photo 1>",
+      "parent": "<dark panel 1>",
+      "bbox": [
+       0,
+       495,
+       508,
+       1000
+      ]
+     },
+     {
+      "label": "<left hand 1>",
+      "parent": "<reaching hands photo 1>",
+      "bbox": [
+       237,
+       495,
+       508,
+       725
+      ]
+     },
+     {
+      "label": "<right hand 2>",
+      "parent": "<reaching hands photo 1>",
+      "bbox": [
+       0,
+       663,
+       362,
+       1000
+      ]
+     },
+     {
+      "label": "<header group 1>",
+      "parent": "ROOT",
+      "bbox": [
+       46,
+       45,
+       616,
+       303
+      ]
+     },
+     {
+      "label": "<event details group 1>",
+      "parent": "ROOT",
+      "bbox": [
+       50,
+       392,
+       356,
+       446
+      ]
+     },
+     {
+      "label": "<man photo 1>",
+      "parent": "ROOT",
+      "bbox": [
+       644,
+       0,
+       1000,
+       308
+      ]
+     },
+     {
+      "label": "<man face 1>",
+      "parent": "<man photo 1>",
+      "bbox": [
+       786,
+       18,
+       955,
+       187
+      ]
+     },
+     {
+      "label": "<red sweater 1>",
+      "parent": "<man photo 1>",
+      "bbox": [
+       663,
+       160,
+       1000,
+       308
+      ]
+     },
+     {
+      "label": "<woman photo 1>",
+      "parent": "ROOT",
+      "bbox": [
+       485,
+       276,
+       1000,
+       492
+      ]
+     },
+     {
+      "label": "<woman face 1>",
+      "parent": "<woman photo 1>",
+      "bbox": [
+       545,
+       276,
+       835,
+       485
+      ]
+     },
+     {
+      "label": "<gold earring 1>",
+      "parent": "<woman photo 1>",
+      "bbox": [
+       592,
+       388,
+       631,
+       423
+      ]
+     },
+     {
+      "label": "<dancer photo 1>",
+      "parent": "ROOT",
+      "bbox": [
+       679,
+       443,
+       1000,
+       804
+      ]
+     },
+     {
+      "label": "<dancer face 1>",
+      "parent": "<dancer photo 1>",
+      "bbox": [
+       836,
+       527,
+       898,
+       574
+      ]
+     },
+     {
+      "label": "<green tank top 1>",
+      "parent": "<dancer photo 1>",
+      "bbox": [
+       836,
+       574,
+       930,
+       663
+      ]
+     },
+     {
+      "label": "<green shorts 1>",
+      "parent": "<dancer photo 1>",
+      "bbox": [
+       822,
+       641,
+       922,
+       689
+      ]
+     },
+     {
+      "label": "<woman photo 2>",
+      "parent": "ROOT",
+      "bbox": [
+       429,
+       668,
+       751,
+       945
+      ]
+     },
+     {
+      "label": "<woman face 2>",
+      "parent": "<woman photo 2>",
+      "bbox": [
+       497,
+       684,
+       608,
+       785
+      ]
+     },
+     {
+      "label": "<clear glasses 1>",
+      "parent": "<woman photo 2>",
+      "bbox": [
+       503,
+       712,
+       604,
+       747
+      ]
+     },
+     {
+      "label": "<camo shirt 1>",
+      "parent": "<woman photo 2>",
+      "bbox": [
+       431,
+       796,
+       703,
+       945
+      ]
+     },
+     {
+      "label": "<woman photo 3>",
+      "parent": "ROOT",
+      "bbox": [
+       695,
+       781,
+       1000,
+       1000
+      ]
+     },
+     {
+      "label": "<woman face 3>",
+      "parent": "<woman photo 3>",
+      "bbox": [
+       804,
+       802,
+       924,
+       908
+      ]
+     },
+     {
+      "label": "<black tank top 1>",
+      "parent": "<woman photo 3>",
+      "bbox": [
+       755,
+       903,
+       951,
+       1000
+      ]
+     },
+     {
+      "label": "<text unit 1>",
+      "parent": "<header group 1>",
+      "bbox": [
+       57,
+       45,
+       387,
+       117
+      ]
+     },
+     {
+      "label": "<text unit 2>",
+      "parent": "<header group 1>",
+      "bbox": [
+       46,
+       140,
+       616,
+       265
+      ]
+     },
+     {
+      "label": "<text unit 3>",
+      "parent": "<header group 1>",
+      "bbox": [
+       56,
+       289,
+       254,
+       303
+      ]
+     },
+     {
+      "label": "<text unit 4>",
+      "parent": "<event details group 1>",
+      "bbox": [
+       50,
+       392,
+       270,
+       417
+      ]
+     },
+     {
+      "label": "<text unit 5>",
+      "parent": "<event details group 1>",
+      "bbox": [
+       50,
+       427,
+       356,
+       446
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "target_size": [
+  1047,
+  1501
+ ],
+ "target_image_uri": "s3://core-cn-oss.canva.com/usr/tayo/testset-studio/shared/v1/benchmarks/repaired-20261012/balanced-r6-cloud5-astra/runs/balanced-r2-bound-fal-a30587254e/generation/gpt-image-2.5-sunburst/images/cf67c7c76ef00fc35fb90579.png",
+ "system_prompt": "<prompts/planner_system.txt>",
+ "user_prompt": "<image>\nSource: frame_0\n<source_regions>\n{\"frame_0\":{\"compositional_deconstruction\":{\"elements\":[{\"label\":\"<poster canvas 1>\",\"parent\":\"ROOT\",\"bbox\":[0,0,1000,1000]},{\"label\":\"<dark panel 1>\",\"parent\":\"ROOT\",\"bbox\":[0,460,736,1000]},{\"label\":\"<reaching hands photo 1>\",\"parent\":\"<dark panel 1>\",\"bbox\":[0,495,508,1000]},{\"label\":\"<left hand 1>\",\"parent\":\"<reaching hands photo 1>\",\"bbox\":[237,495,508,725]},{\"label\":\"<right hand 2>\",\"parent\":\"<reaching hands photo 1>\",\"bbox\":[0,663,362,1000]},{\"label\":\"<header group 1>\",\"parent\":\"ROOT\",\"bbox\":[46,45,616,303]},{\"label\":\"<event details group 1>\",\"parent\":\"ROOT\",\"bbox\":[50,392,356,446]},{\"label\":\"<man photo 1>\",\"parent\":\"ROOT\",\"bbox\":[644,0,1000,308]},{\"label\":\"<man face 1>\",\"parent\":\"<man photo 1>\",\"bbox\":[786,18,955,187]},{\"label\":\"<red sweater 1>\",\"parent\":\"<man photo 1>\",\"bbox\":[663,160,1000,308]},{\"label\":\"<woman photo 1>\",\"parent\":\"ROOT\",\"bbox\":[485,276,1000,492]},{\"label\":\"<woman face 1>\",\"parent\":\"<woman photo 1>\",\"bbox\":[545,276,835,485]},{\"label\":\"<gold earring 1>\",\"parent\":\"<woman photo 1>\",\"bbox\":[592,388,631,423]},{\"label\":\"<dancer photo 1>\",\"parent\":\"ROOT\",\"bbox\":[679,443,1000,804]},{\"label\":\"<dancer face 1>\",\"parent\":\"<dancer photo 1>\",\"bbox\":[836,527,898,574]},{\"label\":\"<green tank top 1>\",\"parent\":\"<dancer photo 1>\",\"bbox\":[836,574,930,663]},{\"label\":\"<green shorts 1>\",\"parent\":\"<dancer photo 1>\",\"bbox\":[822,641,922,689]},{\"label\":\"<woman photo 2>\",\"parent\":\"ROOT\",\"bbox\":[429,668,751,945]},{\"label\":\"<woman face 2>\",\"parent\":\"<woman photo 2>\",\"bbox\":[497,684,608,785]},{\"label\":\"<clear glasses 1>\",\"parent\":\"<woman photo 2>\",\"bbox\":[503,712,604,747]},{\"label\":\"<camo shirt 1>\",\"parent\":\"<woman photo 2>\",\"bbox\":[431,796,703,945]},{\"label\":\"<woman photo 3>\",\"parent\":\"ROOT\",\"bbox\":[695,781,1000,1000]},{\"label\":\"<woman face 3>\",\"parent\":\"<woman photo 3>\",\"bbox\":[804,802,924,908]},{\"label\":\"<black tank top 1>\",\"parent\":\"<woman photo 3>\",\"bbox\":[755,903,951,1000]},{\"label\":\"<text unit 1>\",\"parent\":\"<header group 1>\",\"bbox\":[57,45,387,117]},{\"label\":\"<text unit 2>\",\"parent\":\"<header group 1>\",\"bbox\":[46,140,616,265]},{\"label\":\"<text unit 3>\",\"parent\":\"<header group 1>\",\"bbox\":[56,289,254,303]},{\"label\":\"<text unit 4>\",\"parent\":\"<event details group 1>\",\"bbox\":[50,392,270,417]},{\"label\":\"<text unit 5>\",\"parent\":\"<event details group 1>\",\"bbox\":[50,427,356,446]}]}}}\n</source_regions>\n<user_prompt>\nChoose one photo in [image 1] and crop it closer so its subject stands out more, keeping the crop within the existing panel. Leave the rest of the poster unchanged.\n</user_prompt>\n<aspect_ratio>\n0.6975\n</aspect_ratio>\n<output_format>\nBind edit actions to elements.layout by Target label. Put an edit list immediately before the matching region desc. Each list item contains reference_id, reference_label when provided, and instruction, in that order. Keep one object per action, preserving its original field values and the original Source-group/edit order. Use a list even for a single action. The Target label remains on the region, without repetition inside edit objects. Preserve Source frame_N scope. Unedited regions have no added edit fields. elements.reference_edits retains each reference_id and its remove array, without an edit key. Retain region color_palette only for Target regions with edit actions. Omit it from all unedited layout regions. Always retain style_description.color_palette. Preserve all other caption content and field order.\n</output_format>",
+ "prompt_sha256": "20e480b41eaea0da669ef51614073a33cff82e8784323c1f8f3771057474b942"
+}

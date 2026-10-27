@@ -1,0 +1,411 @@
+{
+ "sample_id": "fzsft-c8000ball-97e81ba5241034c93410abc4a5a3392e543a638df6261e91b285bd8de73bd047",
+ "original_sample_id": "manual_upload:0a3db47c-5e04-4233-abb6-c0491c4d0019",
+ "input_index": 0,
+ "instruction": {
+  "normalized_edit_instruction": "Use the poster in <frame>0</frame> as the base. Enlarge and reframe the photograph inside the upper-right polygonal panel, making the woman's closed-eyed face and gold earring substantially larger. Position her face farther right, with her hair cropped by the panel's upper edge and her neck cropped by its lower edge. Preserve the panel's polygonal boundary and the surrounding poster layout, text, and other photographs.",
+  "high_level_description": "This graphic design poster presents a dynamic promotional collage for a music event, structured around sharp diagonal divisions, geometric polygonal cutouts, and a rich color palette of deep navy blue, electric lime green, warm orange, and vivid purple. In the upper left quadrant, <title block 1> establishes the event branding with three distinct typographic tiers: the outlined uppercase lettering of <text_unit 1>, the massive solid lime green display font of <text_unit 2>, and the widely tracked subtitle <text_unit 3>. Directly below this title group, event scheduling details are presented in clean white monospaced text, featuring the date in <text_unit 4> and the venue address in <text_unit 5>. The right and lower portions of the poster are filled with an energetic montage of photographic portraits and performance imagery set within angled polygonal frames. In the upper right corner, <man 1> is shown from the chest up against a plain off-white studio background, his downward-tilted <face 1> framed by short blonde hair and complemented by a textured crimson knit <sweater 1>. Directly beneath him, <woman 1> is captured in a close-up portrait bathed in saturated purple and blue light, her serene <face 2> tilted upward with closed eyes while wearing a large circular gold <earring 1>. Further down on the right, <woman 2> performs an expressive dance pose against a warm orange and yellow gradient backdrop, her profile <face 3> turned upward as she extends her raised <left hand 1> and outstretched <right hand 2>, dressed in a bright lime green <top 1>, dark athletic <shorts 1>, and dark sneakers <shoe 1> and <shoe 2>. In the lower center, <woman 3> appears in a polygonal frame against a neutral grey studio background, her calm <face 4> framed by long green-tinted braids, clear protective <glasses 1>, and a camouflage <shirt 1>. In the bottom right corner, <woman 4> looks directly forward with an intense expression on her <face 5>, wearing a dark sleeveless <top 2> against a deep teal background. Dominating the lower left quadrant against a solid black field, <hands 1> features two expressive hands, <hand 3> and <hand 4>, reaching upward with splayed fingers illuminated by dramatic dual-tone orange and purple rim lighting. The overall composition balances bold typography with diverse human expressions, creating a vibrant visual rhythm across the poster.",
+  "style_description": {
+   "aesthetics": "Modern graphic design poster with dynamic diagonal geometric framing, vibrant neon accents, and expressive portrait photography.",
+   "lighting": "Dramatic studio lighting featuring strong neon purple, orange, and blue rim lights and high-contrast shadows.",
+   "medium": "Digital graphic design composition combining photography and vector typography."
+  },
+  "compositional_deconstruction": {
+   "background": "A deep navy blue background features subtle diagonal geometric divisions and a soft cyan gradient glow across the center.",
+   "elements": [
+    {
+     "type": "coarse",
+     "label": "<title block 1>",
+     "parent": "ROOT",
+     "bbox": [
+      42,
+      43,
+      305,
+      618
+     ],
+     "desc": "A large typographic block occupies the upper left section of the composition against a dark navy blue background. It features three stacked lines of text rendered in bright lime green. The top line uses an outlined sans-serif font, the middle line uses an extra-bold solid typeface, and the bottom line uses a smaller tracked sans-serif style. The entire block is aligned to the left and framed by a thin diagonal accent line."
+    },
+    {
+     "type": "text",
+     "label": "<text_unit 1>",
+     "parent": "<title block 1>",
+     "bbox": [
+      43,
+      54,
+      117,
+      389
+     ],
+     "text": "CITY",
+     "desc": "The text is rendered in an all-caps sans-serif typeface with a thin lime-green outline and a hollow interior. It is positioned at the top of the title group with standard letter spacing. The characters are tall, clean, and modern in appearance."
+    },
+    {
+     "type": "text",
+     "label": "<text_unit 2>",
+     "parent": "<title block 1>",
+     "bbox": [
+      138,
+      44,
+      265,
+      618
+     ],
+     "text": "SOUND",
+     "desc": "The lettering is set in an extra-bold, heavy sans-serif typeface in solid bright lime green. It features tightly spaced, tall uppercase characters that dominate the title area. The glyphs have sharp geometric terminals and a solid, opaque fill."
+    },
+    {
+     "type": "text",
+     "label": "<text_unit 3>",
+     "parent": "<title block 1>",
+     "bbox": [
+      287,
+      55,
+      303,
+      255
+     ],
+     "text": "FESTIVAL",
+     "desc": "The text is set in a small, clean sans-serif typeface in solid lime green. It features wide tracking between the uppercase letters. The line is left-aligned directly below the primary headline."
+    },
+    {
+     "type": "text",
+     "label": "<text_unit 4>",
+     "parent": "ROOT",
+     "bbox": [
+      392,
+      52,
+      414,
+      268
+     ],
+     "text": "17 July 2027",
+     "desc": "The text is rendered in a clean, medium-weight white sans-serif font. It is arranged in a single horizontal line with standard letter spacing. The characters are crisp and set against a dark blue background."
+    },
+    {
+     "type": "text",
+     "label": "<text_unit 5>",
+     "parent": "ROOT",
+     "bbox": [
+      426,
+      51,
+      444,
+      354
+     ],
+     "text": "24 Relay Road, Bristol",
+     "desc": "The text is set in a light-to-medium weight white sans-serif typeface. It is positioned directly beneath the date line in a single horizontal row. The lettering is clean, legible, and unadorned."
+    },
+    {
+     "type": "coarse",
+     "label": "<man 1>",
+     "parent": "ROOT",
+     "bbox": [
+      16,
+      663,
+      307,
+      1000
+     ],
+     "desc": "A young man is shown from the chest up against a plain off-white studio background. He has short blonde hair and looks downward with a calm, neutral expression. He wears a textured, ribbed knit sweater in a deep red tone. The lighting is soft and even across his face and shoulders."
+    },
+    {
+     "type": "face",
+     "label": "<face 1>",
+     "parent": "<man 1>",
+     "bbox": [
+      16,
+      786,
+      187,
+      955
+     ],
+     "desc": "The face of a young man with fair skin and short, textured blonde hair is angled slightly downward. His eyes are cast down in a contemplative expression. Soft, diffused lighting illuminates his facial features evenly from the front."
+    },
+    {
+     "type": "medium",
+     "label": "<sweater 1>",
+     "parent": "<man 1>",
+     "bbox": [
+      161,
+      663,
+      307,
+      1000
+     ],
+     "desc": "The garment is a long-sleeved crewneck sweater made of a thick, ribbed knit fabric. It is dyed a rich, deep red color with visible vertical ribbing texture. The collar fits closely around the neck, and the shoulders extend toward the edges of the frame."
+    },
+    {
+     "type": "coarse",
+     "label": "<woman 1>",
+     "parent": "ROOT",
+     "bbox": [
+      274,
+      521,
+      492,
+      915
+     ],
+     "desc": "A woman is captured in a close-up portrait with her head tilted upward and eyes closed. She is illuminated by dramatic purple and blue studio lighting that highlights her facial contours. A large, circular gold earring is visible on her earlobe. Her dark hair is pulled back, framing her serene expression.",
+     "edit": {
+      "instruction": "Zoom into the portrait within the existing polygonal panel. Enlarge the woman's face and gold earring, move the face farther right, and crop the enlarged hair at the upper boundary and neck at the lower boundary, preserving her closed eyes, upward head tilt, and purple-blue lighting.",
+      "references": [
+       {
+        "reference_id": "frame_0",
+        "reference_bbox": [
+         276,
+         485,
+         492,
+         1000
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "type": "face",
+     "label": "<face 2>",
+     "parent": "<woman 1>",
+     "bbox": [
+      274,
+      521,
+      492,
+      911
+     ],
+     "desc": "The woman's face is shown in profile and three-quarter view, tilted upward with closed eyes. Her skin is bathed in a gradient of warm amber and cool purple light. Her lips are slightly parted in a relaxed, peaceful expression."
+    },
+    {
+     "type": "fine",
+     "label": "<earring 1>",
+     "parent": "<woman 1>",
+     "bbox": [
+      398,
+      604,
+      442,
+      654
+     ],
+     "desc": "A large, circular metallic earring hangs from the woman's earlobe. It features a textured, hammered gold surface that catches the ambient studio light. The earring stands out against her dark hair and skin."
+    },
+    {
+     "type": "coarse",
+     "label": "<woman 2>",
+     "parent": "ROOT",
+     "bbox": [
+      465,
+      696,
+      770,
+      992
+     ],
+     "desc": "A woman is captured in a dynamic, full-body dance pose against a warm orange and yellow gradient background. She wears a bright lime green tank top, dark athletic shorts, and dark sneakers. Her arms are extended outward in an expressive, energetic gesture. Her body is angled in a wide stance with one leg bent and the other extended back."
+    },
+    {
+     "type": "face",
+     "label": "<face 3>",
+     "parent": "<woman 2>",
+     "bbox": [
+      528,
+      836,
+      574,
+      897
+     ],
+     "desc": "The woman's face is turned upward and slightly to the side with an open, energetic expression. Her dark hair is pulled back into a ponytail. Warm studio light illuminates her features from the front and side."
+    },
+    {
+     "type": "medium",
+     "label": "<top 1>",
+     "parent": "<woman 2>",
+     "bbox": [
+      574,
+      836,
+      661,
+      929
+     ],
+     "desc": "The garment is a fitted, sleeveless athletic tank top in a vibrant lime green color. It features a scoop neckline and thin shoulder straps. The fabric is smooth and form-fitting, accentuating the dancer's movement."
+    },
+    {
+     "type": "medium",
+     "label": "<shorts 1>",
+     "parent": "<woman 2>",
+     "bbox": [
+      641,
+      822,
+      686,
+      921
+     ],
+     "desc": "The garment consists of dark green athletic shorts with a relaxed fit. They feature a curved hemline and a comfortable elastic waistband. The fabric appears lightweight and flexible for movement."
+    },
+    {
+     "type": "hand",
+     "label": "<left hand 1>",
+     "parent": "<woman 2>",
+     "bbox": [
+      465,
+      946,
+      502,
+      977
+     ],
+     "desc": "The dancer's left hand is raised high above her head with fingers spread open. The palm faces forward in an expressive, reaching gesture. Warm light highlights the contours of the fingers and wrist."
+    },
+    {
+     "type": "hand",
+     "label": "<right hand 2>",
+     "parent": "<woman 2>",
+     "bbox": [
+      629,
+      696,
+      654,
+      742
+     ],
+     "desc": "The dancer's right hand extends outward to the side with relaxed, open fingers. The palm is angled slightly downward in a fluid dance motion. The hand is illuminated by the warm ambient background light."
+    },
+    {
+     "type": "fine",
+     "label": "<shoe 1>",
+     "parent": "<woman 2>",
+     "bbox": [
+      740,
+      712,
+      768,
+      755
+     ],
+     "desc": "A dark athletic sneaker is worn on the dancer's right foot, resting on the floor. It features a low-profile silhouette with a dark upper and a contrasting white sole. The shoe is angled forward in a grounded stance."
+    },
+    {
+     "type": "fine",
+     "label": "<shoe 2>",
+     "parent": "<woman 2>",
+     "bbox": [
+      744,
+      930,
+      769,
+      992
+     ],
+     "desc": "A dark athletic sneaker is worn on the dancer's left foot, positioned behind her in a wide stance. It has a low-top design with a dark upper and a white midsole. The shoe is planted firmly on the studio floor."
+    },
+    {
+     "type": "coarse",
+     "label": "<woman 3>",
+     "parent": "ROOT",
+     "bbox": [
+      681,
+      429,
+      946,
+      703
+     ],
+     "desc": "A woman is shown in a bust portrait against a neutral grey studio background. She has long, dark green-tinted braided hair that falls over her shoulders. She wears clear protective safety glasses and a camouflage-patterned crewneck shirt. Her expression is calm and direct as she looks toward the viewer."
+    },
+    {
+     "type": "face",
+     "label": "<face 4>",
+     "parent": "<woman 3>",
+     "bbox": [
+      684,
+      495,
+      785,
+      608
+     ],
+     "desc": "The woman's face is oriented toward the camera with a calm, focused gaze. She has dark skin, defined eyebrows, and dark lipstick. Clear safety glasses rest across the bridge of her nose, framing her eyes."
+    },
+    {
+     "type": "fine",
+     "label": "<glasses 1>",
+     "parent": "<woman 3>",
+     "bbox": [
+      714,
+      503,
+      743,
+      604
+     ],
+     "desc": "The eyewear consists of clear, transparent safety glasses with a wraparound design. The plastic frames and lenses are completely see-through, allowing the eyes behind them to remain fully visible. They rest securely across the bridge of the nose."
+    },
+    {
+     "type": "medium",
+     "label": "<shirt 1>",
+     "parent": "<woman 3>",
+     "bbox": [
+      796,
+      431,
+      946,
+      701
+     ],
+     "desc": "The garment is a short-sleeved crewneck t-shirt featuring a classic camouflage pattern. It combines shades of olive green, brown, tan, and black in an organic blotch design. The fabric is casual cotton with a standard ribbed collar."
+    },
+    {
+     "type": "coarse",
+     "label": "<woman 4>",
+     "parent": "ROOT",
+     "bbox": [
+      784,
+      693,
+      1000,
+      990
+     ],
+     "desc": "A woman is shown from the chest up against a dark teal background. She has voluminous, dark curly hair that frames her face. She wears a dark sleeveless tank top and looks directly forward with a serious, intense expression. Cool blue and green rim lighting highlights the edges of her hair and shoulders."
+    },
+    {
+     "type": "face",
+     "label": "<face 5>",
+     "parent": "<woman 4>",
+     "bbox": [
+      798,
+      804,
+      903,
+      924
+     ],
+     "desc": "The woman's face is framed by tight dark curls and illuminated by cool, moody lighting. She has dark eyes, defined cheekbones, and a direct, serious expression. Subtle green and blue highlights accent the contours of her face."
+    },
+    {
+     "type": "medium",
+     "label": "<top 2>",
+     "parent": "<woman 4>",
+     "bbox": [
+      903,
+      755,
+      1000,
+      951
+     ],
+     "desc": "The garment is a dark, sleeveless tank top with a scoop neckline. It is made of a simple, matte fabric that fits closely to the torso. The straps rest over the shoulders, leaving the arms bare."
+    },
+    {
+     "type": "coarse",
+     "label": "<hands 1>",
+     "parent": "ROOT",
+     "bbox": [
+      493,
+      0,
+      1000,
+      508
+     ],
+     "desc": "Two hands are captured in an expressive, reaching gesture against a solid black background. The upper hand extends upward with splayed fingers, while the lower hand reaches forward with curved fingers. Both hands are dramatically lit with contrasting warm orange and cool purple rim lighting. The composition creates a sense of dynamic motion and tension."
+    },
+    {
+     "type": "hand",
+     "label": "<hand 3>",
+     "parent": "<hands 1>",
+     "bbox": [
+      493,
+      172,
+      755,
+      508
+     ],
+     "desc": "The upper hand is raised with fingers spread wide in an open, reaching gesture. It is illuminated from the right by a warm orange light that defines the edges of the fingers and palm. The wrist and forearm extend downward toward the lower hand."
+    },
+    {
+     "type": "hand",
+     "label": "<hand 4>",
+     "parent": "<hands 1>",
+     "bbox": [
+      663,
+      0,
+      1000,
+      362
+     ],
+     "desc": "The lower hand reaches upward with curved, expressive fingers. It is illuminated by a cool purple and blue light along the left side, contrasting with the warm light on the upper hand. The forearm extends from the bottom left corner of the frame."
+    }
+   ]
+  }
+ },
+ "seed": 42,
+ "source_sha256": [
+  "f989603af4b3f4bf402590a04f5576d9a2c080a1ef716e97ab7ce52ca421edd4"
+ ],
+ "target_width": 832,
+ "target_height": 1216,
+ "gpt_target_width": 1047,
+ "gpt_target_height": 1501,
+ "planner_checkpoint": 8000,
+ "repair_method": "greedy",
+ "ref_relpaths": [
+  "assets/9144ffd2daec4e1258a1b0d5d28411d2f074ccf923b713a83c9984a46f98e840.png"
+ ]
+}

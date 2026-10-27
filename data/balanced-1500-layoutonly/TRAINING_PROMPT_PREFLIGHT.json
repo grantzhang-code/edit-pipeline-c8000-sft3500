@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "counts": {
+    "verified": 1465,
+    "single": 743,
+    "multi": 722,
+    "excluded": 35
+  },
+  "dataset": "balanced-1500-layoutonly",
+  "training_ablation": "given_ratio_plan_only_inline_edits",
+  "training_prompt_spec": {
+    "name": "given_ratio_plan_only_inline_edits",
+    "version": 1,
+    "target_caption_schema": "given_ratio_plan_only_frame_region_edit_list_target_palette_v3",
+    "auto_ratio": {
+      "name": "given_ratio",
+      "aspect_ratio": {
+        "auto_fraction": 0.0,
+        "assignment": "always_supply_target_ratio",
+        "resample_each_epoch": false
+      },
+      "target_transform": {
+        "field_order": [
+          "normalized_edit_instruction",
+          "high_level_description",
+          "style_description",
+          "elements"
+        ],
+        "plan": "original_target",
+        "aspect_ratio": "user_input_only",
+        "applies_to": "all_rows"
+      }
+    },
+    "inline_edits": {
+      "name": "inline_edits",
+      "version": 1,
+      "base_prompt_sha256": "744e24cde3b6c0ca30a815b044ecbe2e0aef5590d28685ae46f718d84846cb86",
+      "input_order": "images_then_json",
+      "target_elements_order": [
+        "background",
+        "layout",
+        "reference_edits"
+      ],
+      "target_transform": {
+        "schema": "given_ratio_plan_only_frame_region_edit_list_target_palette_v3",
+        "join_key": "target_label",
+        "edit_location": "elements.layout[*].edit",
+        "edit_position": "immediately_before_desc",
+        "edit_container": "list_of_action_objects",
+        "action_fields": [
+          "reference_id",
+          "reference_label",
+          "instruction"
+        ],
+        "action_order": "original_source_group_then_edit_order",
+        "reference_edits": "preserve_reference_id_and_remove_arrays_without_edit_key",
+        "region_palette_policy": "retain_only_edit_target_labels"
+      }
+    },
+    "input_order": "images_then_json",
+    "output_fields": [
+      "normalized_edit_instruction",
+      "high_level_description",
+      "style_description",
+      "elements"
+    ],
+    "target_elements_order": [
+      "background",
+      "layout",
+      "reference_edits"
+    ],
+    "system_sha256": "6a4ef8dfa84c756348f942e4810820f98bd14ed8294f74f3fa32aa6475639818",
+    "edit_reference_bbox": "absent_in_delivery_rejected",
+    "prompt_sha256": "eecfcbe5d62db3ec22b0cac349b9b22c52bfa74a947382b49637f461dd08140e"
+  },
+  "system_user_exact": true,
+  "training_path": "frame contract.row + editparser transform",
+  "training_transform_identity_checks": 1465,
+  "enable_thinking": false,
+  "chat_template": "qwen3_5",
+  "min_pixels": 3072,
+  "max_pixels": 1048576,
+  "max_model_len": 32768
+}

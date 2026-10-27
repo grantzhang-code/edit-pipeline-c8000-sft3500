@@ -1,0 +1,26 @@
+{
+  "dataset": "balanced-1500-layoutonly",
+  "source_uri": "s3://core-cn-oss.canva.com/usr/tayo/testset-studio/shared/v1/benchmarks/balanced-1500-r6-20261012/",
+  "rows": 1500,
+  "eligible": 1465,
+  "excluded": 35,
+  "single": 743,
+  "multi": 722,
+  "instruction_variant": "luna-20261013",
+  "instruction_policy": "cases.luna.jsonl Luna rewrite (instruction == user_instruction == rewritten_instruction, variant luna-20261013), exact text preserved; original_user_instruction recorded only as provenance",
+  "case_policy": "balanced-1500-r6 (pe/cases.jsonl, Luna instructions): the cases the full-JSON variant infers whose every Source has a schema-valid layout_only output; the rest in input-exclusions.json",
+  "region_policy": "layout-only Source regions: s3://core-cn-oss.canva.com/usr/grantzhang/balanced-1500-r6-source-json-dual-greedy-20261014/layout_only/source-captions.jsonl (ericdu layout-only-shortstart-c10000, task layout_only, greedy), compositional_deconstruction.elements with label / parent / bbox exactly as generated; the full-JSON variant uses the layoutfirst arm of the same pool (pe/source-regions.json)",
+  "target_size_policy": "pe/target-dimensions.json (balanced-1500-r6 GPT Image 2.5 target size)",
+  "image_policy": "balanced-1500-r6 source images (inputs[].s3_uri, sha256-checked by the controller prefetch)",
+  "engine_probe_cases": [
+    1263,
+    881
+  ],
+  "output_s3": null,
+  "files": {
+    "cases.jsonl": "1f8466f684e5595ef1bdfb9319dd3023e25a39bc1078b1c3f7ddb9cac980c625",
+    "source-regions.json": "fc6b305108828851019fce3b718b0ad08e0729286469f4990c21abfd1811ec03",
+    "target-dimensions.json": "790a9534a12bfbe2b89fe84bbbe156e428ca848bd284e858f6caa16d5b44c88b",
+    "input-exclusions.json": "b2ef9e56c8a9b4d342e62cb987c2e8ee567d6384e045b0e480ac8a793547374f"
+  }
+}

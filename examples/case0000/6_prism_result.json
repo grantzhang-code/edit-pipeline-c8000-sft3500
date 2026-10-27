@@ -1,0 +1,53 @@
+{
+ "protocol_id": "prism-edit1500-v7-single",
+ "axes": {
+  "alignment": {
+   "score": 9,
+   "votes": [
+    9
+   ],
+   "range": 0,
+   "review_required": false,
+   "reviews": [
+    {
+     "justification": "中上部女性照片已在原有面板内明显放大裁切，面部更突出，其余照片、文字和版式基本保留，但整张海报由1312×1881变为832×1216，宽高比略有改变，产生轻微纵向拉伸。",
+     "score": 9
+    }
+   ]
+  },
+  "aesthetic": {
+   "score": 8,
+   "votes": [
+    8
+   ],
+   "range": 0,
+   "review_required": false,
+   "reviews": [
+    {
+     "justification": "整体拼贴与人物形态基本可信，但右侧舞者双手的手指细节略显模糊、局部粘连，左下交叠手掌的部分指根与关节过渡也不够自然。",
+     "score": 8
+    }
+   ]
+  }
+ },
+ "overall": 8.5,
+ "review_required": false,
+ "case_id": "manual_upload:0a3db47c-5e04-4233-abb6-c0491c4d0019",
+ "model_id": "9B c8000 SFT-3500",
+ "task": "canvas_format_adaptation",
+ "candidate_sha256": "cb6c93d94c2a5df5272734a7d9c84c6c3639cd7dde68b723f05dabd44bcd336a",
+ "input_index": 0,
+ "image_uri": "s3://core-cn-oss.canva.com/usr/grantzhang/dit58k-planner9b-1025/ema58000-cfg2/batches/r1025-b057-fzsft-c8000-sft3500/w00/generated/images/fzsft-c8000ball-97e81ba5241034c93410abc4a5a3392e543a638df6261e91b285bd8de73bd047.png",
+ "provenance": {
+  "response_ids": [
+   "resp_00a9d2dfe716d0ec016ae01050e8b887d1bcf3734a5c83008b",
+   "resp_0c1e81adafe2a7c6016ae01050963487d18f4c4478d919bbea"
+  ],
+  "variant": "prism10-v7-default-sync",
+  "service_tier": [
+   "default",
+   "default"
+  ]
+ },
+ "version": "fzsft-balanced1500layoutonly-retry3-c8000-ditv2s3500-b39abcc3196c"
+}

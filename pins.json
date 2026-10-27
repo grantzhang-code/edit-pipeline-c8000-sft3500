@@ -1,0 +1,113 @@
+{
+  "pipeline": "Planner fzsft-9b c8000 + balanced-1500 layout-only Source JSON + Luna instruction -> Planner JSON (repair-retry3) -> DiT SFT-3500 (EMA) -> 10分-prism-like",
+  "pinned_at": "2026-10-27",
+  "benchmark": {
+    "name": "balanced-1500-r6-20261012",
+    "prefix": "s3://core-cn-oss.canva.com/usr/tayo/testset-studio/shared/v1/benchmarks/balanced-1500-r6-20261012/",
+    "cases_original": {"uri": "s3://core-cn-oss.canva.com/usr/tayo/testset-studio/shared/v1/benchmarks/balanced-1500-r6-20261012/cases.jsonl", "sha256": "76787bf5a9dd05a2b51ee50beba36f96772c96357ea2faf873cbe9e3622f95ab"},
+    "cases_luna": {"uri": "s3://core-cn-oss.canva.com/usr/tayo/testset-studio/shared/v1/benchmarks/balanced-1500-r6-20261012/cases.luna.jsonl", "sha256": "1f8466f684e5595ef1bdfb9319dd3023e25a39bc1078b1c3f7ddb9cac980c625"},
+    "rows": 1500, "single": 750, "multi": 750,
+    "target_size": "data/balanced-1500-layoutonly/target-dimensions.json (GPT Image 2.5 sunburst target per case, PNG IHDR width/height)"
+  },
+  "luna_rewrite": {
+    "variant": "luna-20261013",
+    "model": "gpt-6-luna",
+    "skill_commit": "a7c144dc3305687e7c4180ce93125a9a94b24060",
+    "provenance": "s3://core-cn-oss.canva.com/usr/tayo/testset-studio/shared/v1/benchmarks/balanced-1500-r6-20261012/rewrites/luna-20261013-v2/",
+    "index": "s3://core-cn-oss.canva.com/usr/tayo/testset-studio/shared/v1/benchmarks/balanced-1500-r6-20261012/LUNA_REWRITE.json",
+    "fields": "cases.luna.jsonl: instruction == user_instruction == rewritten_instruction (Luna); original_user_instruction = the user's original request"
+  },
+  "source_layout_json": {
+    "pool": "s3://core-cn-oss.canva.com/usr/grantzhang/balanced-1500-r6-source-json-dual-greedy-20261014/",
+    "captions": {"uri": "s3://core-cn-oss.canva.com/usr/grantzhang/balanced-1500-r6-source-json-dual-greedy-20261014/layout_only/source-captions.jsonl", "sha256": "c0a6c08f3761ed7edd7db02129447b94a5c75ea100ab42d1f1fb91725a62551e"},
+    "task_id": "infer_layout_dual_balanced1500_h200_20261014",
+    "arm": "layout_only",
+    "model_profile": "layout-only-shortstart-c10000 (ericdu)",
+    "model_hf": "s3://core-cn-training.canva.com/pixelcraft/usr/ericdu/models/layout-only-shortstart-c10000-hf-trained-mtp3-v1/",
+    "hf_manifest_sha256": "4e5155a9f731390e090b5eafad375fe8970621d8a9b3f62fa2369d3209084dde",
+    "checkpoint_sha256": "062292e926554e369620a21cbdede6cf25ef59876e4daff1373795e6cab65b06",
+    "git_commit": "fbc18bf3aa93212821706ac7891ec1e914220447",
+    "prompt": "prompts/source_layout_only_prompt.json",
+    "prompt_sha256": "404d4acb2801fe21c3283a47433b0f1e33ba17490903b4e932078968001235a0",
+    "decoding": {"temperature": 0, "seed": 42, "n": 1, "max_new_tokens": 32000, "max_pixels": 4194304, "max_model_len": 65536, "speculative_tokens": 3, "dtype": "bfloat16"},
+    "hardware": "Eagle H200 (hold grantzhang-pe-frame-v8-h200168-hold-1013), vLLM 0.29 runtime 76e2cdea",
+    "counts": {"unique_source_images": 3443, "schema_valid": 3430, "invalid": 2, "truncated": 11},
+    "full_plan": "data/source-json-pool-plan.json"
+  },
+  "planner": {
+    "lineage": "fzsft-9b",
+    "wandb_run": "4b3162283b0b",
+    "training_jobset": "fengzhida-editing-planner-9b-sft-128g-1025c",
+    "training_git": "5242e3d899d50f35a3510deafcec0309a50c11b2 (branch fengzhida/editing-planner-9b-sft; overlay configmap fengzhida-editing-planner-9b-sft-128g-1025c-code sha256 cd5329295e15029140bd0197c29088984b3c5f7dbbff6af4b55aa6b812ffc0a4)",
+    "architecture": "Qwen3.5-9B (8 full-attn + 24 GDN layers, untied lm_head, trained ViT, MTP 1 layer)",
+    "warm_start": "model-only from r16-9b (wandb fb7e3ba506f6) checkpoint-25000",
+    "training_image": "699983977898.dkr.ecr.us-east-1.amazonaws.com/ds-core-cn-omra-trainer@sha256:54d365f856e275bd4fb55d1002be98c9bb303b1dc74005b8a82584a75f0554d4",
+    "step": 8000,
+    "checkpoint_mcore": "s3://core-cn-oss.canva.com/usr/fengzhida/design-layout-megatron-swift/runs/fengzhida-editing-planner-9b-sft-128g-1025c/mcore/checkpoint-8000/",
+    "checkpoint_manifest_sha256": "744289f14f499996aa3b3befe3708f720ff8910a936178c5e725b261ec7fae9e",
+    "checkpoint_bytes": 130597419361,
+    "hf_export": "s3://core-cn-oss.canva.com/usr/grantzhang/balanced-1500-layoutonly-editparser-fzsft-9b-4b3162283b0b-c8000-trainprompt-greedy-rtx8-bs64-20261026/models/checkpoint-8000/",
+    "hf_export_manifest_sha256": "fafca62135cfe1411ade8c345b7891b8845cb3b93857ef6e2cc47b8c1acac218",
+    "hf_export_bytes": 19326392666,
+    "training_contract": "given_ratio_plan_only_inline_edits v1",
+    "prompt_spec_sha256": "eecfcbe5d62db3ec22b0cac349b9b22c52bfa74a947382b49637f461dd08140e",
+    "system_prompt_sha256": "6a4ef8dfa84c756348f942e4810820f98bd14ed8294f74f3fa32aa6475639818",
+    "inference_package": {"uri": "s3://core-cn-oss.canva.com/usr/grantzhang/runbooks/editparser-r3-9b-pe-rtx8-20261023/packages/pe-30c6515-d408ce873de065f3be389aaed19d410a403a7f0f82d7c76b678817201ca00715.tar.gz", "sha256": "d408ce873de065f3be389aaed19d410a403a7f0f82d7c76b678817201ca00715", "git": "r3-9b-pe-1023 @ 30c6515", "plan": "pe/plans/plan-8000-balanced-1500-layoutonly-fzsft-9b.json"},
+    "retry_package": {"uri": "s3://core-cn-oss.canva.com/usr/grantzhang/runbooks/editparser-r3-9b-pe-rtx8-20261023/packages/pe-5fe6b98-dcea0833c24530cd2b2d827f895a5cf664f28fc2c747d233a9ea624b2414ba02.tar.gz", "sha256": "dcea0833c24530cd2b2d827f895a5cf664f28fc2c747d233a9ea624b2414ba02", "git": "r3-9b-pe-1023 @ 5fe6b98", "plan": "pe/plans/plan-8000-balanced-1500-layoutonly-fzsft-9b-retry-r123-multi.json"},
+    "node_run": "s3://core-cn-oss.canva.com/usr/grantzhang/runbooks/editparser-r3-9b-pe-rtx8-20261023/packages/node_run_v2.sh",
+    "vllm_runtime": {"uri": "s3://core-cn-oss.canva.com/usr/grantzhang/benchmark-2m-v2-source-target-json-caption/c4b-layoutfirst-v2-c10000-20261001/bootstrap/acceleration-runtime-vllm029-76e2cdeaada5fee1ec8d1b86d216732459900b5345f5f2397a34ef4761cec54a.tar.gz", "sha256": "76e2cdeaada5fee1ec8d1b86d216732459900b5345f5f2397a34ef4761cec54a"},
+    "decoding_greedy": {"temperature": 0.0, "top_p": 1.0, "top_k": -1, "repetition_penalty": 1.0, "seed": 42, "max_model_len": 32768, "max_new_tokens": "32768 - prompt - 1", "min_pixels": 3072, "max_pixels": 1048576, "mtp_tokens": 1, "batch_size": 64, "enable_chunked_prefill": false, "enable_thinking": false, "chat_template": "qwen3_5"},
+    "retry_sampling": {
+      "round1": {"temperature": 0.7, "top_p": 0.9, "top_k": 50, "repetition_penalty": 1.05, "seed": 42},
+      "round2": {"temperature": 0.8, "top_p": 0.95, "top_k": 100, "repetition_penalty": 1.05, "seed": 1234},
+      "round3": {"temperature": 0.6, "top_p": 0.9, "top_k": 50, "repetition_penalty": 1.1, "seed": 7}
+    },
+    "hardware": "Eagle RTX PRO 6000 (sm_120), hold grantzhang-rtx64-r12pe-eagle-1025a, 4 nodes x 8 GPU",
+    "outputs": {
+      "greedy_run": "s3://core-cn-oss.canva.com/usr/grantzhang/balanced-1500-layoutonly-editparser-fzsft-9b-4b3162283b0b-c8000-trainprompt-greedy-rtx8-bs64-20261026/",
+      "greedy_responses": {"uri": "s3://core-cn-oss.canva.com/usr/grantzhang/balanced-1500-layoutonly-editparser-fzsft-9b-4b3162283b0b-c8000-trainprompt-greedy-rtx8-bs64-20261026/checkpoint-8000/responses.jsonl.gz", "sha256": "326cba65f678aae6e99c085f74825dfe2c830d23499b679e54406e69b6d2b68c"},
+      "retry_runs": "s3://core-cn-oss.canva.com/usr/grantzhang/balanced-1500-layoutonly-editparser-fzsft-9b-4b3162283b0b-c8000-trainprompt-retry-r123-multi-rtx8-20261026/round-{1,2,3}/",
+      "final_dir": "s3://core-cn-oss.canva.com/usr/grantzhang/planner-9b-1025/fzsft-9b-4b3162283b0b/c8000/balanced-1500-layoutonly-repair-retry3/",
+      "final_captions": {"uri": "s3://core-cn-oss.canva.com/usr/grantzhang/planner-9b-1025/fzsft-9b-4b3162283b0b/c8000/balanced-1500-layoutonly-repair-retry3/captions.jsonl", "sha256": "b39abcc3196c439f56cf7d9cdb42f1248406126385886fdc5a4f9553aece1edd"},
+      "counts": {"eligible": 1465, "greedy_json_schema_refs_valid": [1453, 1452, 1447], "final_json_schema_refs_valid": [1460, 1460, 1460], "repair_outcome": {"retry_r1": 12, "retry_r2": 4, "retry_r3": 1, "rule_repair": 1, "unrecovered": 5}}
+    }
+  },
+  "dit": {
+    "run": "tayo-edit1k-sft-v2-6m-360-20261026",
+    "step": 3500,
+    "weights": "ema",
+    "checkpoint": "s3://core-cn-training.canva.com/pixelcraft/usr/tayo/runs/tayo-edit1k-sft-v2-6m-360-20261026/checkpoints/step=3500.ckpt/",
+    "init_from": "s3://core-cn-training.canva.com/pixelcraft/usr/tayo/runs/tayo-edit1k-pr377-nk62-r54k-20261025/attempts/8edaa212-8295-4122-b5f8-51a458511636/checkpoints/step=57000.ckpt/",
+    "text_encoder": "s3://core-cn-oss.canva.com/checkpoints/qwen/Qwen3.8-27B/",
+    "vae": "s3://core-cn-oss.canva.com/checkpoints/flux2/FLUX.2-klein-4B-vae/",
+    "render_package": {"uri": "s3://core-cn-oss.canva.com/usr/grantzhang/dit58k-planner9b-1025/ema58000-cfg2/code/27a5fcc20400dfee109d37f8a6c3d1fb19098fdf3e2ab26918a844945a2182d6.tar.gz", "sha256": "27a5fcc20400dfee109d37f8a6c3d1fb19098fdf3e2ab26918a844945a2182d6", "dir": "dit-render-cfg2-v3-tayo58k", "note": "tayo cfg2-v3 frozen render package + checkpoints.py allow-list for tayo-edit1k-sft-* (step >= 500)"},
+    "image": "699983977898.dkr.ecr.us-east-1.amazonaws.com/ds-core-cn-omra-trainer@sha256:6070937089e446aee4d8ecf9848a407298e7284c3a8153deee6c0ca58ab42e73",
+    "protocol": {"id": "euler50-cfg2-allsteps-v2", "sampler": "Euler", "steps": 50, "guidance": 2.0, "guidance_interval": [0.0, 1.0], "seed": 42, "timeshift": 4.6, "noise_scale": 1},
+    "geometry": "target = GPT target size scaled to <= 1024^2 px, both sides multiples of 32; references white-composited, same rule, BICUBIC",
+    "hardware": "euc1 H100 (8 GPU / process group, FSDP shard 8)",
+    "outputs": {
+      "version": "fzsft-balanced1500layoutonly-retry3-c8000-ditv2s3500-b39abcc3196c",
+      "version_dir": "s3://core-cn-oss.canva.com/usr/grantzhang/dit58k-planner9b-1025/ema58000-cfg2/versions/fzsft-balanced1500layoutonly-retry3-c8000-ditv2s3500-b39abcc3196c/",
+      "images": "s3://core-cn-oss.canva.com/usr/grantzhang/fzsft-top4-candidates-20261026/c8000-sft3500/",
+      "counts": {"eligible": 1460, "generated": 1457, "not_generated": "3 (Planner caption over the DiT text budget, CPU admission)"}
+    }
+  },
+  "evaluation": {
+    "scheme": "10分-prism-like",
+    "source": "https://github.com/canvanauts/jimmyqiancode/tree/main/10%E5%88%86-prism-like",
+    "commit": "5a9db85",
+    "protocol": "prism-edit1500-v7-single",
+    "judge": "gpt-6.1-sol, reasoning effort medium, 1 vote per axis",
+    "axes": ["alignment (编辑指令遵循)", "aesthetic (审美与画面质量)"],
+    "instruction_judged": "original_user_instruction (skill assets/cases.jsonl), not the Luna rewrite",
+    "aggregation": "mean per task category, then equal weight over the 20 categories; overall = mean of the two axes",
+    "service_tier_official": "flex (background)",
+    "service_tier_used_for_reported_numbers": "default, synchronous (isolated variant prism10-v7-default-sync)",
+    "reported": {
+      "uri": "s3://core-cn-oss.canva.com/usr/grantzhang/dit58k-planner9b-1025/ema58000-cfg2/prism10-v7-default-sync/REPORT.json",
+      "model_id": "9B c8000 SFT-3500",
+      "completed_images": 1457, "task_coverage": 20,
+      "alignment": 7.933, "aesthetic": 8.492, "overall": 8.213
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "name": "given_ratio_plan_only_inline_edits",
+  "version": 1,
+  "SYSTEM": "You are an image editing layout planner. You receive ordered Source images, the original edit instruction, a Target aspect ratio (width/height), and Source region annotations in <source_regions>. The image marked frame_N corresponds to the frame_N annotation. Each Source annotation lists every region's label, parent, and bbox; ROOT denotes a top-level region. Labels and parent links are local to their Source frame. All bboxes are integer [x1, y1, x2, y2] coordinates normalized to 0-1000. Source bboxes describe locations in their corresponding Source image, while Target bboxes must describe the intended Target canvas, whose width/height is given in <aspect_ratio>. Use the images and Source region hierarchies together to ground references and understand the requested edit. Plan the complete intended Target, including unchanged content. Return one JSON object with fields in this order: normalized_edit_instruction, high_level_description, style_description, elements. style_description contains aesthetics, lighting, medium, and color_palette. elements contains background, layout, and reference_edits. List Target layout regions parent before child, with type, label, parent, bbox, optional text, edit when annotated, desc, optional entity, and optional color_palette. Bind each edit to the layout region with the same Target label. Immediately before that region's desc, write an edit list. Each list item is one edit object with reference_id, reference_label when provided, and instruction, in that order. reference_id identifies its Source frame_N; reference_label is the original Source label or list of labels. For new content, preserve an empty reference_label if provided, otherwise omit it from that edit object. Always use a list, even for one edit. For multiple edits bound to the same Target label, retain one object per action in Source-group and edit order, keeping each action's original field values together. Preserve any reference_label that is itself a list. Keep the Target label once on its layout region; do not repeat it in edit objects. Retain color_palette only for region labels appearing as an edit's Target label. Omit color_palette from every other layout region. Always retain the overall style_description.color_palette. Keep elements.reference_edits grouped by Source reference_id frame_N with the original remove arrays, including empty groups, but omit the edit key because edits are now in layout. Each remove describes Source content absent from the Target with reference_label when provided, its Source reference_bbox (XYXY/1000), and instruction, in that order. Use Source label identifiers for cross-image grounding. Include the annotated edits inline; represent unchanged content in the complete Target layout without inventing extra edit actions or provenance fields. Follow the original edit instruction and the supplied Target aspect ratio. Output only the JSON object.",
+  "USER_OUTPUT_RULES": "\n<output_format>\nBind edit actions to elements.layout by Target label. Put an edit list immediately before the matching region desc. Each list item contains reference_id, reference_label when provided, and instruction, in that order. Keep one object per action, preserving its original field values and the original Source-group/edit order. Use a list even for a single action. The Target label remains on the region, without repetition inside edit objects. Preserve Source frame_N scope. Unedited regions have no added edit fields. elements.reference_edits retains each reference_id and its remove array, without an edit key. Retain region color_palette only for Target regions with edit actions. Omit it from all unedited layout regions. Always retain style_description.color_palette. Preserve all other caption content and field order.\n</output_format>",
+  "SPEC": {
+    "name": "given_ratio_plan_only_inline_edits",
+    "version": 1,
+    "target_caption_schema": "given_ratio_plan_only_frame_region_edit_list_target_palette_v3",
+    "auto_ratio": {
+      "name": "given_ratio",
+      "aspect_ratio": {
+        "auto_fraction": 0.0,
+        "assignment": "always_supply_target_ratio",
+        "resample_each_epoch": false
+      },
+      "target_transform": {
+        "field_order": [
+          "normalized_edit_instruction",
+          "high_level_description",
+          "style_description",
+          "elements"
+        ],
+        "plan": "original_target",
+        "aspect_ratio": "user_input_only",
+        "applies_to": "all_rows"
+      }
+    },
+    "inline_edits": {
+      "name": "inline_edits",
+      "version": 1,
+      "base_prompt_sha256": "744e24cde3b6c0ca30a815b044ecbe2e0aef5590d28685ae46f718d84846cb86",
+      "input_order": "images_then_json",
+      "target_elements_order": [
+        "background",
+        "layout",
+        "reference_edits"
+      ],
+      "target_transform": {
+        "schema": "given_ratio_plan_only_frame_region_edit_list_target_palette_v3",
+        "join_key": "target_label",
+        "edit_location": "elements.layout[*].edit",
+        "edit_position": "immediately_before_desc",
+        "edit_container": "list_of_action_objects",
+        "action_fields": [
+          "reference_id",
+          "reference_label",
+          "instruction"
+        ],
+        "action_order": "original_source_group_then_edit_order",
+        "reference_edits": "preserve_reference_id_and_remove_arrays_without_edit_key",
+        "region_palette_policy": "retain_only_edit_target_labels"
+      }
+    },
+    "input_order": "images_then_json",
+    "output_fields": [
+      "normalized_edit_instruction",
+      "high_level_description",
+      "style_description",
+      "elements"
+    ],
+    "target_elements_order": [
+      "background",
+      "layout",
+      "reference_edits"
+    ],
+    "system_sha256": "6a4ef8dfa84c756348f942e4810820f98bd14ed8294f74f3fa32aa6475639818",
+    "edit_reference_bbox": "absent_in_delivery_rejected",
+    "prompt_sha256": "eecfcbe5d62db3ec22b0cac349b9b22c52bfa74a947382b49637f461dd08140e"
+  },
+  "training_git_commit": "5ed3723511121ce9c25c68bc8763b27437d0c622",
+  "source_files_sha256": {
+    "experiments/1018/peframe_b300_coyote_speed/editparser_contract.py": "d6eb872741a2c08d5181cbf2fddf09f7255f00df13c53f891d31a77a9b2f94f6",
+    "experiments/1018/peframe_b300_coyote_speed/data_contract.py": "dc39a725aa97d84f7e00ee8094c6ca29a5a566befa3fa761f3899c24fdf768e8",
+    "experiments/1015/peframe_h200_ablation/variants.py": "078570c44dc6d393a3e0e8eb24f38289af702d53b72374c990d22ac51f2b799d",
+    "experiments/1013/pe_frame_v8_sourcejson_hsdp_128b300/contract.py": "141259c3f0b06a050444dd16478bdd8c8a756be47e79970e54e77b437fb766fb"
+  },
+  "output_root_fields": [
+    "normalized_edit_instruction",
+    "high_level_description",
+    "style_description",
+    "elements"
+  ],
+  "plan_fields": [
+    "normalized_edit_instruction",
+    "high_level_description",
+    "style_description",
+    "elements"
+  ],
+  "edit_action_fields": [
+    "reference_id",
+    "reference_label",
+    "instruction"
+  ]
+}
